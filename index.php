@@ -12,7 +12,7 @@ $router->map('GET', '/', function () {
     DefaultController::homePage();
 });
 
-// map homepage
+// map test
 $router->map('GET', '/test', function () {
     DefaultController::test();
 });
