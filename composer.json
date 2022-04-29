@@ -1,0 +1,21 @@
+{
+    "name": "root/github_actions",
+    "description": "Test Github Actions for deployment on shared server",
+    "type": "project",
+    "license": "proprietary",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Florian Mathevon"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "altorouter/altorouter": "dev-master",
+        "phpmailer/phpmailer": "dev-master"
+    }
+}
