@@ -1,11 +1,11 @@
 <?php
 
-use AltoRouter as Alto;
+use AltoRouter as Alt;
 use App\Controller\DefaultController;
 
 require __DIR__ . '/vendor/autoload.php';
 
-$router = new Alto();
+$router = new Alt();
 
 // map homepage
 $router->map('GET', '/', function () {
