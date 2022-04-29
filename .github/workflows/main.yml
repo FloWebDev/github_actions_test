@@ -1,0 +1,29 @@
+name: Deploy Site on shared server
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Get the latest code
+    - uses: actions/checkout@v3
+
+    - name: Install dependencies
+      run: composer install --prefer-dist --no-progress --ignore-platform-reqs
+
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      with:
+        server: ${{ secrets.TEST_SITE_SERVER}}
+        username: ${{ secrets.TEST_SITE_USER}}
+        password: ${{ secrets.TEST_SITE_PASS}}
